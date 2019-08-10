@@ -35,7 +35,16 @@ class TestController extends Controller
 //        foreach ($data as $val) {
 //            echo $val->id . $val->name . $val->age . $val->email . '<br>';
 //        }
-        $data = \DB::table('member') -> where('id', '>', 2) -> first();
+//        $data = \DB::table('member') -> where('id', '>', 2) -> first();
+//        $data = \DB::table('member') -> where('id', 2) -> value('name');
+//        $data = \DB::table('member') -> select('name', 'age', 'email') -> get();
+        $data = \DB::table('member') -> orderBy('age', 'desc') -> get();
         dump($data);
+    }
+
+    public function del()
+    {
+        $res = \DB::table('member') -> where('id', 1) -> delete();
+        dump($res);
     }
 }
