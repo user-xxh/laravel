@@ -14,7 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::post('home', function () {
-    return 'hello word';
-});
+Route::get('test', 'TestController@test');
+Route::get('admin_test', 'admin\TestController@test');
