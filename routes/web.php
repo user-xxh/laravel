@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 Route::get('test', 'TestController@test');
 Route::get('admin_test', 'admin\TestController@test');
+Route::get('add', 'TestController@add');
+Route::get('del', 'TestController@del');
+Route::get('mod', 'TestController@mod');
+Route::get('select', 'TestController@select');
