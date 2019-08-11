@@ -16,4 +16,14 @@ class TestController extends Controller
         dump(Input::only('gender'));
         dump(Input::except('age'));
     }
+
+    public function test1()
+    {
+        return view('admin.test1');
+    }
+
+    public function test2()
+    {
+        return view('admin.test2');
+    }
 }

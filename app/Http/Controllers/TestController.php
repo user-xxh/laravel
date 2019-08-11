@@ -8,7 +8,10 @@ class TestController extends Controller
 {
     public function test()
     {
-        phpinfo();
+        date_default_timezone_set('PRC');
+        $data = time();
+        $day = date('N');
+        return view('test', compact('data', 'day'));
     }
 
     public function add()

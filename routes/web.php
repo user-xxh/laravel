@@ -20,3 +20,7 @@ Route::get('add', 'TestController@add');
 Route::get('del', 'TestController@del');
 Route::get('mod', 'TestController@mod');
 Route::get('select', 'TestController@select');
+Route::get('admin_test1', 'admin\TestController@test1');
+Route::get('admin_test2', 'admin\TestController@test2');
+Route::get('form', 'CsrfController@form');
+Route::post('csrf', 'CsrfController@csrf');
