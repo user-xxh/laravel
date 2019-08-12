@@ -5,4 +5,4 @@
     这是继承的body
 @endsection
 
-{{--@include('admin.test1')--}}
+@include('admin.test1')
