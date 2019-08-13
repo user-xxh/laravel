@@ -19,9 +19,14 @@ class Model extends Controller
 
     public function model_add(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required|unique:member|min:2|max:20',
+            'age' => 'required|integer|min:1|max:100',
+            'email' => 'required|email'
+        ]);
         //$model = new Member();
-        $res = Member::create($request -> all());
-        dump($res);
+//        $res = Member::create($request -> all());
+//        dump($res);
     }
 
     public function add()

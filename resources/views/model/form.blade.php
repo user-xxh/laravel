@@ -14,6 +14,15 @@
     <input type="email" name="email" placeholder="请输入邮箱" id=""><br>
     {{csrf_field()}}
     <input type="submit" value="提交">
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors -> all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </form>
 </body>
 </html>
