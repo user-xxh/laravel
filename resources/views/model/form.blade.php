@@ -13,6 +13,7 @@
     <input type="number" name="age" placeholder="请输入年龄" id=""><br>
     <input type="email" name="email" placeholder="请输入邮箱" id=""><br>
     <input type="file" name="touxiang" id=""><br>
+    <input type="text" name="yzm" maxlength="5" id=""><img src="{{captcha_src()}}" alt=""><br>
     {{csrf_field()}}
     <input type="submit" value="提交">
     @if(count($errors) > 0)
@@ -26,4 +27,12 @@
     @endif
 </form>
 </body>
+<script src="/js/app.js"></script>
+<script>
+    $(function () {
+        $('img').click(function () {
+            $(this).attr('src', '{{captcha_src()}}' + '&' + Math.random())
+        })
+    })
+</script>
 </html>

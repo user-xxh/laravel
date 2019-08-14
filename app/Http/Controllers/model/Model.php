@@ -22,7 +22,8 @@ class Model extends Controller
         $this->validate($request, [
             'name' => 'required|unique:member|min:2|max:20',
             'age' => 'required|integer|min:1|max:100',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'yzm' => 'required|captcha'
         ]);
         if ($request -> hasFile('touxiang') && $request -> file('touxiang') -> isValid()) {
             $filename = md5(time() . rand(100000,900000)) . '.' . $request -> file('touxiang') ->extension();
