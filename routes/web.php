@@ -30,3 +30,4 @@ Route::get('model_add', 'model\Model@add');
 Route::get('model_select', 'model\Model@select');
 Route::get('model_mod', 'model\Model@mod');
 Route::get('model_del', 'model\Model@del');
+Route::get('page', 'PageController@page');

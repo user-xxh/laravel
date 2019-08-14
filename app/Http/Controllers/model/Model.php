@@ -24,8 +24,18 @@ class Model extends Controller
             'age' => 'required|integer|min:1|max:100',
             'email' => 'required|email'
         ]);
-        //$model = new Member();
+        if ($request -> hasFile('touxiang') && $request -> file('touxiang') -> isValid()) {
+            $filename = md5(time() . rand(100000,900000)) . '.' . $request -> file('touxiang') ->extension();
+            $request -> file('touxiang') -> move('./statics/upload', $filename);
+            $filepath = '/statics/upload/' . $filename;
+        }
+        $data = $request -> except('_token', 'touxiang');
+        $data['avatar'] = isset($filepath) ? $filepath : '';
+        $res = Member::insert($data);
+        return $res ? 'OK' : 'Fail';
+//        $model = new Member();
 //        $res = Member::create($request -> all());
+//        $res = Member::insert($request -> except('_token'));
 //        dump($res);
     }
 

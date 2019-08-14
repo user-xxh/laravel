@@ -8,10 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-<form action="model_form_add" method="post">
+<form action="model_form_add" method="post" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="请输入姓名" id=""><br>
     <input type="number" name="age" placeholder="请输入年龄" id=""><br>
     <input type="email" name="email" placeholder="请输入邮箱" id=""><br>
+    <input type="file" name="touxiang" id=""><br>
     {{csrf_field()}}
     <input type="submit" value="提交">
     @if(count($errors) > 0)
